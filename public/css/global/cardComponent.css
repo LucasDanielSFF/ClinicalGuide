@@ -1,0 +1,65 @@
+.btn-toggle-reverse {
+  background: var(--accent);
+  color: #fff;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+}
+
+.card-container {
+  margin: auto;
+  margin-bottom: 0.375rem;
+  border-radius: 12px;
+  padding: 0.1rem 0.2rem 0.1rem;
+  background: var(--bg-subelement);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  min-width: 298px;
+  max-width: 800px;
+  overflow: hidden;
+}
+
+.card {
+  border: none;
+  background: var(--bg-subelement);
+  color: var(--text-color);
+}
+
+.card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.75s ease;
+}
+
+.card-body.expanded {
+  max-height: 600px;
+}
+
+.collapsible-header.expanded {
+  transition: all 0.8s ease;
+  padding-bottom: 1rem;
+  font-weight: bold;
+  font-size: 120%;
+  color: var(--accent);
+}
+
+.collapsible-header {
+  cursor: pointer;
+  padding: 0.125rem 0;
+  justify-content: center;
+  transition: all 0.8s ease;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.dose-section {
+  border-top: 1px solid #fff;
+}
+
+.dose-value, .reverse-dose-result {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.reverse-calculation {
+  border-top: 1px solid #fff;
+}

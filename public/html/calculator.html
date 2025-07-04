@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="manifest" href="../../sw/manifest.json">
+    <title>ClinicalGuide - Calculadora de Medicações</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/global/cardComponent.css">
+    <link rel="stylesheet" href="../css/modules/calculator.css">
+    <link rel="stylesheet" href="../css/modules/slider.css">
+  </head>
+  <body>
+
+      <header>
+        Calculadora de Medicações
+      </header>
+
+    <main>
+      <div id='main' class="container-fluid">
+
+        <div id="global-weight" class="row container border">
+          <div class="col flex form-label">
+            <label>PESO DO PACIENTE:</label>
+          </div>
+          <div id="patient-weight-form" class="col form-group">
+              <input type="number" id="patient-weight" class="py-2 px-8 col form border nrbr" min="40" max="300" step="1" value="70" required >
+              <p id="patient-weight-text" class="py-2 px-8 col form-text form border nlbr">kg</p>
+          </div>
+          <div id="weight-error" class="col gx-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+              </svg>
+              <p>Somente valores de 40 - 300 kg</p>
+          </div>
+        </div>
+
+        <div id="tab-selector" class="container border">
+          <select class="dropdown no-border">
+            <option class="option" value="" disabled hidden selected>Selecione uma calculadora</option>
+            <option class="option" value="iot">IOT</option>
+            <option class="option" value="test">Teste</option>
+            <option class="option" value="infusion">Infusão</option>
+            <option class="option" value="infusionunlck">Infusão - Desbloqueado</option>
+            <option class="option" value="bolus">Bolus</option>
+            <option class="option" value="bolusunlck">Bolus - Desbloqueado</option>
+            <option class="option" value="universal">Universal</option>
+          </select>
+        </div>
+
+      </div>
+    </main>
+
+    <script type="module" src="../js/modules/calculator/calculator.js"></script>
+    <script type="module">
+      import { initialCardLoading } from '../js/modules/calculator/cardManager.js' 
+      import { initEventListeners } from '../js/modules/calculator/cardComponent.js';
+
+      window.addEventListener('DOMContentLoaded', () => {
+        initEventListeners();
+        initialCardLoading();
+      });
+//test
+      document.getElementById('tab-selector').addEventListener('change', function(e) {
+        const targetTab = e.target.value;
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('show', 'active'));
+        const targetContent = document.querySelector(`#${targetTab}`);
+        if (targetContent) {
+          targetContent.classList.add('show', 'active');
+        }
+        initialCardLoading(targetTab);
+      });
+    
+      if ('../../sw/serviceWorker' in navigator) {
+        window.addEventListener('load', () => navigator.serviceWorker.register('service-worker.js'));
+      }
+    </script>
+
+    <footer>
+      <p>&copy; 2025 ClinicalGuide. Todos os direitos reservados.</p>
+      <p><a href="../../index.html">Página inicial</a></p>
+    </footer>
+  </body>
+</html>

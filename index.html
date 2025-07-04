@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="manifest" href="./sw/manifest.json">
+    <title>ClinicalGuide</title>
+
+    <link rel="stylesheet" href="./public/css/styles.css">
+    <link rel="stylesheet" href="./public/css/global.css">
+  </head>
+  <body>
+
+    <header>ClinicalGuide</header>
+   
+    <main>
+      <div class="container">
+        <div class="d-grid gap-3 col-6 mx-auto">
+          <a href="./public/html/calculator.html" class="btn btn-universal btn-lg">Calculadoras</a>
+          <a href="./medicamentos.html" class="btn btn-universal btn-lg">Medicamentos</a>
+          <a href="./protocolos.html" class="btn btn-universal btn-lg">Protocolos</a>
+        </div>
+      </div>
+    </main>
+
+    <script type="module">
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => navigator.serviceWorker.register('./sw/service-worker.js'));
+      }
+    </script>
+  </body>
+
+  <footer>
+      <p>&copy; 2025 ClinicalGuide. Todos os direitos reservados.</p>
+      <p><a href="./privacy-policy.html">Política de Privacidade</a> | <a href="./index.html">Termos de Uso</a></p>
+  </footer>
+
+</html>

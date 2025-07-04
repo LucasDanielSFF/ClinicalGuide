@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="manifest" href="./sw/manifest.json">
+    <title>ClinicalGuide - Protocolos Clínicos</title>
+
+    <link rel="stylesheet" href="./public/css/styles.css">
+    <link rel="stylesheet" href="./public/css/global.css">
+  </head>
+  <body>
+
+    <header>
+      Protocolos Clínicos
+    </header>
+
+    <main>
+      <div class="card-medicamento">
+        <div class="card-header" data-bs-toggle="collapse" data-bs-target="#prot1">
+          <strong>Emergência:</strong> Suporte Avançado de Vida (ACLS)
+        </div>
+        <div id="prot1" class="collapse">
+          <div class="card-body">
+            <table class="table table-bordered table-sm">
+              <thead class="table-light">
+                <tr><th>Intervenção</th><th>Detalhes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>RCP Imediata</td><td>Iniciar compressões torácicas de alta qualidade (100-120/min), relação 30:2 se paciente não intubado.</td></tr>
+                <tr><td>Acesso e Medicações</td><td>Garantir acesso IV/IO; administrar Adrenalina 1 mg IV a cada 3-5 min e Amiodarona 300 mg IV após o 3º choque (em FV/TV sem pulso).</td></tr>
+                <tr><td>Desfibrilação</td><td>Se ritmo chocável (FV/TV), aplicar choque bifásico de 200 J e retomar RCP imediatamente após o choque.</td></tr>
+                <tr><td>Via Aérea Avançada</td><td>Realizar intubação orotraqueal assim que possível, fornecer O₂ 100%. Após intubação, fazer compressões contínuas e ventilações 10/min.</td></tr>
+                <tr><td>Causas Reversíveis</td><td>Identificar e tratar causas reversíveis da parada (6H: Hipóxia, Hipovolemia, Hidrogênio [acidose], Hipo/hipercalemia, Hipotermia, Hipoglicemia; 6T: Tensão no tórax [pneumotórax], Tamponamento cardíaco, Trombose pulmonar [TEP], Trombose coronária [IAM], Toxinas, Trauma).</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-medicamento">
+        <div class="card-header" data-bs-toggle="collapse" data-bs-target="#prot2">
+          <strong>UTI:</strong> Sedação de Paciente Intubado
+        </div>
+        <div id="prot2" class="collapse">
+          <div class="card-body">
+            <p>Objetivo: manter sedação leve a moderada (ex.: RASS -2 a -3) conforme necessidade clínica.</p>
+            <table class="table">
+              <thead class="table-light">
+                <tr><th>Medicação</th><th>Bôlus Inicial (IV)</th><th>Infusão de Manutenção</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Midazolam</td><td>2–5 mg IV lento</td><td>0,02–0,1 mg/kg/h</td></tr>
+                <tr><td>Propofol</td><td>20–50 mg IV (bolo)</td><td>5–50 µg/kg/min</td></tr>
+                <tr><td>Dexmedetomidina</td><td>0,5–1 µg/kg em 10 min</td><td>0,2–0,7 µg/kg/h</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-medicamento">
+        <div class="card-header" data-bs-toggle="collapse" data-bs-target="#prot3">
+          <strong>Infectologia:</strong> Antibiótico Empírico Inicial
+        </div>
+        <div id="prot3" class="collapse">
+          <div class="card-body">
+            <p>Protocolos de terapia antimicrobiana empírica para infecções comuns.</p>
+            <table class="table table-bordered table-sm">
+              <thead class="table-light">
+                <tr><th>Condição</th><th>1ª Escolha</th><th>Alternativa</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Pneumonia comunitária grave</td><td>Ceftriaxone 1-2 g IV + Azitromicina 500 mg IV</td><td>Levofloxacino 750 mg IV (se alergia a beta-lactâmicos)</td></tr>
+                <tr><td>Pielonefrite / ITU complicada</td><td>Ciprofloxacino 400 mg IV</td><td>Ceftriaxone 1 g IV (ou Meropenem 1 g IV se alto risco de ESBL)</td></tr>
+                <tr><td>Sepse de foco indeterminado</td><td>Piperacilina-Tazobactam 4,5 g IV + Amicacina 15 mg/kg IV</td><td>Meropenem 1 g IV (cobre amplo espectro em pacientes de alto risco)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module">
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => navigator.serviceWorker.register('./sw/service-worker.js'));
+      }
+  </script>
+    <footer>
+      <p>&copy; 2025 ClinicalGuide. Todos os direitos reservados.</p>
+      <p><a href="../../index.html">Página inicial</a></p>
+    </footer>
+  </body>
+</html>

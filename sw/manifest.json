@@ -1,0 +1,23 @@
+{
+    "name": "Clinical Guide",
+    "short_name": "clinicalguide",
+    "description": "none",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#007CDE",
+    "theme_color": "#007CDE",
+    "icons": [
+      {
+        "src": "../images/web-app-manifest-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "../images/web-app-manifest-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }

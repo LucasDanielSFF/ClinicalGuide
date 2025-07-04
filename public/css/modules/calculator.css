@@ -1,0 +1,92 @@
+.bolus-pres-select {
+  max-width: none;
+  width: 100px;
+}
+
+/* */
+
+.infusion-med-select, .infusion-dilution-select {
+  max-width: 280px;
+  width: 180px;
+}
+
+.infusion-med-vol, .infusion-conc-value, .infusion-sol-volume {
+  max-width: none;
+  width: 75px;
+}
+
+.infusion-conc {
+  flex-wrap: nowrap
+}
+
+.infusion-conc-unit {
+  max-width: none;
+  width: 75px;
+}
+
+/* fixes */
+.infusion-conc-unit {
+  height: 32px;
+}
+
+.inf-form-text {
+  height: 26px; 
+}
+
+/* */
+
+.tab-header {
+  display: flex;
+  justify-content: left;
+  margin-left: 4px;
+}
+
+.volume-result {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+#weight-error {
+  display: flex;
+}
+
+#global-weight {
+  margin-bottom: 0.5rem;
+  border-radius: 12px;
+  gap: 0;
+  width: 100%;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+}
+
+#patient-weight {
+  margin-right: 0;
+}
+
+#patient-weight-text {
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+}
+
+#weight-error {
+  border-radius: 12px;
+  padding: 0.5rem 0.5rem;
+  background: #EEEEEE;
+  color: #FFFFFF;
+  opacity: 1;
+  background-clip: border-box;
+  transition: all 0.5s ease;
+  flex-grow: 0;
+}
+
+#weight-error.show {
+  opacity: 1;
+  animation: all 0.5s ease;
+  background: var(--error);
+}
+
+.dose-info {
+  color:  #8f8f8f;
+}

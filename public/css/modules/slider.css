@@ -1,0 +1,64 @@
+.slider-wrapper {
+  position: relative;
+  cursor: grab;
+  width: 80%;
+  padding: 0%;
+  margin: 1rem 0;
+}
+
+.ticks-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  height: 24px;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(-50%);
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+    );
+}
+
+.ticks {
+  position: relative;
+  height: 24px;
+  transition: transform 0.3s ease;
+  width: 200%;
+  left: 50%;
+}
+
+.tick {
+  position: absolute;
+  bottom: 0;
+  width: 6px;
+  background: #4E9AF1;
+  border-radius: 6px;
+  height: 12px;
+  transition: all 0.2s ease;
+}
+
+.tick-large {
+  height: 24px;
+  bottom: 0;
+  width: 6px;
+  border-radius: 6px;
+}
+
+input[type="range"] {
+  padding: 12px 0;
+  background-color: transparent;
+  appearance: none;
+  width: 100%;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  display: none;
+}
+
+.form-range::-webkit-slider-thumb {
+  display: none;
+}
